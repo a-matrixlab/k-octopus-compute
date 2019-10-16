@@ -18,6 +18,7 @@ package org.lisapark.koctopus.compute;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import org.lisapark.koctopus.repo.KosCache;
 import static spark.Spark.*;
 
 /**
@@ -29,6 +30,8 @@ public class ComputeService {
     static final Logger LOG = Logger.getLogger(ComputeService.class.getName());
 
     public static void main(String[] args) {
+        
+        KosCache kosCache = new KosCache();
         
         // Set Server port
         int _port = 4567;
@@ -46,7 +49,7 @@ public class ComputeService {
         // Map requests
         post(endPoint + "compute", (req, res) -> {
             LOG.log(Level.INFO, "{0}:{1}", new Object[]{endPoint, "compute"});
-            return new HttpEndPoint().startProcessing(req, res);
+            return new HttpEndPoint(kosCache).startProcessing(req, res);
         });
       
     }
