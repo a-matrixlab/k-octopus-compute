@@ -20,9 +20,9 @@ package org.lisapark.koctopus.compute;
 import com.fasterxml.uuid.Generators;
 import com.google.gson.Gson;
 import java.util.UUID;
-import org.lisapark.koctopus.repo.processor.sma.SmaRedis;
-import org.lisapark.koctopus.repo.sink.lucene.LuceneBaseIndex;
-import org.lisapark.koctopus.repo.source.TestSourceRedis;
+//import org.lisapark.koctopus.repo.processor.sma.SmaRedis;
+//import org.lisapark.koctopus.repo.sink.lucene.LuceneBaseIndex;
+//import org.lisapark.koctopus.repo.source.TestSourceRedis;
 import org.lisapark.koctopus.core.ProcessingModel;
 import org.lisapark.koctopus.core.graph.Gnode;
 import org.lisapark.koctopus.core.graph.Graph;
@@ -61,16 +61,16 @@ public class Main {
         model.setName("Test");
         model.setTransportUrl("redis://localhost");
 
-        TestSourceRedis source = TestSourceRedis.newTemplate();
-        model.addExternalEventSource(source);
-
-        SmaRedis sma = SmaRedis.newTemplate();
-        sma.getInput().connectSource(source);
-        model.addProcessor(sma);
-
-        LuceneBaseIndex sink = LuceneBaseIndex.newTemplate();
-        sink.getInput().connectSource(sma);
-        model.addExternalSink(sink);
+//        TestSourceRedis source = TestSourceRedis.newTemplate();
+//        model.addExternalEventSource(source);
+//
+//        SmaRedis sma = SmaRedis.newTemplate();
+//        sma.getInput().connectSource(source);
+//        model.addProcessor(sma);
+//
+//        LuceneBaseIndex sink = LuceneBaseIndex.newTemplate();
+//        sink.getInput().connectSource(sma);
+//        model.addExternalSink(sink);
 
         return model;
     }

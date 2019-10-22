@@ -101,7 +101,8 @@
         <dependency>
             <groupId>${project.groupId}</groupId>
             <artifactId>k-octopus-repo</artifactId>
-            <version>${project.version}</version>
+            <version>0.7.3</version>
+            <type>jar</type>
         </dependency>
         <dependency>
             <groupId>javax.enterprise</groupId>
