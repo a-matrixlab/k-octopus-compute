@@ -18,7 +18,7 @@ package org.lisapark.koctopus.compute;
 
 import java.util.logging.Level;
 import java.util.logging.Logger;
-import org.lisapark.koctopus.repo.KosCache;
+import org.lisapark.koctopus.repo.RepoCache;
 import static spark.Spark.*;
 
 /**
@@ -31,7 +31,7 @@ public class ComputeService {
 
     public static void main(String[] args) {
         
-        KosCache kosCache = new KosCache();
+        RepoCache kosCache = new RepoCache();
         
         // Set Server port
         int _port = 4567;
