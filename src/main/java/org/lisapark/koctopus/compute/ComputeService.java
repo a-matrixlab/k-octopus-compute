@@ -31,7 +31,7 @@ public class ComputeService {
 
     public static void main(String[] args) {
         
-        RepoCache kosCache = new RepoCache();
+        RepoCache repoCache = new RepoCache();
         
         // Set Server port
         int _port = 4567;
@@ -49,7 +49,7 @@ public class ComputeService {
         // Map requests
         post(endPoint + "compute", (req, res) -> {
             LOG.log(Level.INFO, "{0}:{1}", new Object[]{endPoint, "compute"});
-            return new HttpEndPoint(kosCache).startProcessing(req, res);
+            return new HttpEndPoint(repoCache).startProcessing(req, res);
         });
       
     }

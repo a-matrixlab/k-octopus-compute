@@ -20,7 +20,7 @@ import java.util.logging.Logger;
 import org.lisapark.koctopus.repo.ServiceUtils;
 import org.lisapark.koctopus.core.ProcessingException;
 import org.lisapark.koctopus.core.ValidationException;
-import org.lisapark.koctopus.repo.BaseExecutor;
+import org.lisapark.koctopus.runner.BaseExecutor;
 import org.lisapark.koctopus.repo.RepoCache;
 import spark.Request;
 import spark.Response;
@@ -33,8 +33,8 @@ public class HttpEndPoint extends BaseExecutor {
 
     static final Logger LOG = Logger.getLogger(HttpEndPoint.class.getName());    
     
-    public HttpEndPoint(RepoCache koCache){
-        super(koCache);
+    public HttpEndPoint(RepoCache repoCache){
+        super(repoCache);
     }
 
     /**
