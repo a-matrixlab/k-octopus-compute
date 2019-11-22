@@ -46,7 +46,8 @@ public class HttpEndPoint extends BaseExecutor {
      * @throws ProcessingException
      * @throws java.lang.InterruptedException
      */
-    public String startProcessing(Request req, Response res) throws ValidationException, ProcessingException, InterruptedException {
+    public String startProcessing(Request req, Response res) 
+            throws ValidationException, ProcessingException, InterruptedException {
         String requestJson = req.body();
         
         LOG.info(requestJson);
